@@ -98,17 +98,20 @@ Figure ~\ref{fig:nacl_diffraction} shows the diffraction pattern of NaCl powder.
     \centering
     \includegraphics[width=0.8\linewidth]{results/nacl_film.png}
     \caption{NaCl diffraction patten, using Debye-Scherrer method, displayed on the film}
+    \label{fig:nacl_diffraction}
 \end{figure}
 
+The NaCl diffraction pattern is used as a sanity test for  ring extracting algorithm. as shown by Figure ~\ref{fig:nacl_rings} it is clear that algorithm is quite accurate and finds all eye clear rings and more which the eye can't clearly identify without a closer look, those rings are infered based on peaks from Figure ~\ref{fig:nacl_data}
+
+
+Algorithm data for the Nacl sample ~\ref{fig:nacl_data}, graph presents the raw data (), the background fit(), their subtractions (red) which represent the "real" X-Ray diffraction pattern, subtraction with magnification (yellow) and the peaks located on the subtraction which are the inferred rings which our eye many times can't identify.
+when compared with Figure ~\ref{fig:nacl_rings} we see many rings matching which gives the algorithm much credibility.
+
 \subsection{Urea-Choline Chloride Mixtures: Transition to Liquid Phase}
+Diffraction patterns for urea-choline chloride mixtures at various compositions are shown in Fig.~\ref{fig:urea_chcl_diffraction}. For off-eutectic molar ratios (1:1, 1:2), the samples remained solid at room temperature, and diffraction pattern exhibited relatively sharp peaks, though somewhat broader than NaCl due to smaller crystallite sizes and/or strain.
+The solid mixtures arent very unified, for that reson we see terrirble unclear diffraction patterns as shown in Figure. ~\ref{fig:solid_urea_nacl}
 
-Diffraction patterns for urea-choline chloride mixtures at various compositions are shown in Fig.~\ref{fig:urea_chcl_diffraction}. For off-eutectic molar ratios (1:1, 1:2), the samples remained solid at room temperature, and diffraction patterns exhibited relatively sharp peaks, though somewhat broader than NaCl due to smaller crystallite sizes and/or strain.
-
-At the eutectic molar ratio of 2:1, the sample liquefied at room temperature. The corresponding diffraction pattern showed dramatically broadened peaks with FWHM values $\beta \sim 2^\circ$--$5^\circ$, more than an order of magnitude larger than the crystalline references. Applying the Scherrer equation yields effective ``crystallite sizes'' of $\tau \sim 2$--5 nm, comparable to the molecular scale. This is consistent with the liquid state, where coherent scattering domains are limited to nearest-neighbor distances.
-
-The broadened peaks retain an approximately sinc-like profile, as predicted by the Fourier transform of a finite scattering domain. In the liquid, the limit $N \to \infty$ is \textit{not} reached—only a few coordination shells contribute coherently—resulting in a sinc function that does not approach a delta function.
-
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     % --- First Subfigure ---
     \begin{subfigure}[b]{0.48\linewidth}
@@ -125,9 +128,25 @@ The broadened peaks retain an approximately sinc-like profile, as predicted by t
         \label{fig:7_20_ratio}
     \end{subfigure}
     
-    \caption{Main caption describing both images.}
-    \label{fig:nacl_diffraction}
+    \caption{Urea Choline-Chloride Solid Mixtures Diffraction on Film Zoomed in}
+    \label{fig:solid_urea_nacl}
 \end{figure}
+
+
+At the eutectic molar ratio of 2:1, the sample liquefied at room temperature and became eutectic. the liquid sample was much more unified, which causes the diffraction patterns to be much clearer diffraction pattern with much clearer Debye rings compared the Nacl-urea solid mixtures as clearly showed in Figure ~\ref{fig:eutectic_film}.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{results/eutectic.jpg}
+    \caption{NaCl diffraction pattern, using Debye-Scherrer method, displayed on the film}
+    \label{fig:eutectic_film}
+\end{figure}
+
+
+The eutectic measurement diffraction pattern showed dramatically broadened peaks with FWHM values $\beta \sim 2^\circ$--$5^\circ$, more than an order of magnitude larger than the crystalline references. Applying the Scherrer equation yields effective ``crystallite sizes'' of $\tau \sim 2$--5 nm, comparable to the molecular scale. This is consistent with the liquid state, where coherent scattering domains are limited to nearest-neighbor distances.
+
+The broadened peaks retain an approximately sinc-like profile, as predicted by the Fourier transform of a finite scattering domain. In the liquid, the limit $N \to \infty$ is \textit{not} reached—only a few coordination shells contribute coherently—resulting in a sinc function that does not approach a delta function.
 
 \subsection{Role of Hygroscopic}
 
@@ -156,14 +175,16 @@ Several experimental improvements could enhance the precision and reproducibilit
 \ \textbf{item Additives for stabilization:} Introducing desiccants or other stabilizing agents to the eutectic mixture could prevent unwanted liquefaction and allow a controlled study of solid phases near the eutectic composition.
 
 \item \textbf{Improved measurement method:} Film  is quite brute and inaccurate way to detect X-Ray intensity. to extract intensity from the film, you need to develop, and scan the film which causes a large error range for each point and limits the data accuracy by the accuracy of the film which is very dependent on quality.
-\begin{figure}
+Moreover, film color intensity is nonlinear which caused our intensity data to be not linear, see Figure ~\ref{fig:film_nonlinear_behaviour}.
+Thus we recommend using a different more linear way of measurement (such as X-Ray camera) or to address film Nonlinearity.
+
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\linewidth]{film_nonlinear_behaviour.png}
+    \includegraphics[width=0.9\linewidth]{film_nonlinear_behaviour.png}
     \caption{Film color change relative to exposure}
+    \label{fig:film_nonlinear_behaviour}
 \end{figure}
 
-Moreover, film color intensity is nonlinear which caused our intensity data to be not linear.
-thus we recommend using a different more linear way of measurement (such as X-Ray camera) or to address film Nonlinearity.
 
 
 \end{enumerate}
