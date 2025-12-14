@@ -1,0 +1,189 @@
+\documentclass[aps,prl,twocolumn,superscriptaddress,10pt]{revtex4-2}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{physics}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage[utf8]{inputenc}
+\usepackage[hebrew,english]{babel}
+
+\documentclass{article}
+\begin{document}
+
+\title{Investigating Phase Transitions via Debye-Scherrer Geometry }
+
+\author{Ofek Eshet}
+\author{Ido Sharfshtain}
+\author{Shoham Baris}
+
+\begin{abstract}
+We investigate phase transitions in deep eutectic mixtures of urea and choline chloride via X-ray powder diffraction using the Debye-Scherrer geometry. At the eutectic molar ratio (urea:choline chloride) of 2:1, the compound transitions from solid to liquid at room temperature, exhibiting broad Sinc-like diffraction peaks characteristic of reduced long-range order. In contrast, off-eutectic compositions and reference Na-Cl powder produce sharp, delta-function-like peaks typical of crystalline solids. We interpret these observations through the Scherrer equation, relating peak broadening to finite crystallite size, and the Fourier transform formalism connecting real-space lattice structure to reciprocal-space diffraction patterns. The hygroscopic nature of choline chloride causes unintended partial liquefaction upon air exposure, influencing the observed peak profiles. Our results demonstrate X-ray diffraction as a sensitive probe of solid-liquid phase transitions in eutectic systems.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+X-ray powder diffraction is a cornerstone technique for probing the atomic structure of crystalline and disordered materials. When an incident X-ray beam interacts with a periodic lattice, constructive interference of scattered waves occurs at specific angles, described by Bragg's law:
+\begin{equation}
+n \lambda = 2d \sin \theta
+\label{eq:bragg}
+\end{equation}
+
+where $\lambda$ is the X-ray wavelength, $d$ the interplanar spacing, $\theta$ the Bragg angle and $n$ an integer. This interference condition arises from the difference in the path between waves scattered from adjacent lattice planes.
+
+Deep eutectic solvents (DES) are liquid mixtures of hydrogen bond donors and acceptors that exhibit melting points that are far below those of their pure components~\cite{smith2014deep}. The urea-choline chloride system, with a eutectic point at approximately a 2:1 molar ratio, liquefies near room temperature despite both constituents being solid individually~\cite{abbott2004deep}. This dramatic melting point depression arises from strong hydrogen-bonding interactions that disrupt the crystalline lattice~\cite{choline_urea_thermal}.
+
+In this work, we employ the Debye-Scherrer method to measure X-ray diffraction from powdered samples of NaCl (reference), pure urea, pure choline chloride, and urea-choline chloride mixtures at varying compositions. We observe characteristic transitions in peak shape from sharp (crystalline) to broad (liquid/amorphous) as the eutectic composition approaches, providing direct structural evidence for the solid-liquid phase transition.
+
+\section{Theoretical Background}
+
+\subsection{Bragg's Law and Wave Interference}
+
+Bragg's law (Eq.~\ref{eq:bragg}) is a manifestation of constructive interference between X-rays scattered from parallel atomic planes. When the path difference between scattered waves equals an integer multiple of the wavelength, the waves interfere constructively, producing a diffraction peak. This geometric condition underlies all crystallographic diffraction techniques.
+
+\subsection{Fourier Transform and Reciprocal Space}
+
+The diffraction pattern can be interpreted as the Fourier transform of the electron density $\rho(\mathbf{r})$ in the crystal. For a perfect infinite lattice, the Fourier transform produces delta functions at reciprocal lattice points $\mathbf{G}$:
+\begin{equation}
+\mathcal{F}\{\rho(\mathbf{r})\} \propto \sum_{\mathbf{G}} \delta(\mathbf{k} - \mathbf{G})
+\end{equation}
+where $\mathbf{k}$ is the scattering vector. These delta spikes correspond to infinitely sharp diffraction peaks.
+
+For a \textit{finite} crystal of $N$ unit cells, the Fourier transform yields a sinc function:
+\begin{equation}
+\mathcal{F}\{\text{finite lattice}\} \propto \frac{\sin(Nkd/2)}{\sin(kd/2)} = \text{sinc}(Nkd/2)
+\end{equation}
+As in $N \to \infty$, $\text{sinc}(Nkd/2) \to \delta(k)$, recovering the infinite-lattice limit. Thus, the infinite crystal is simply the limiting case of the Sinc function as domain size diverges.
+
+In liquids, long-range periodicity is absent, and the coherently scattering domain is small (on the order of molecular spacing). The diffraction peaks are consequently very broad, retaining the sinc-like functional form but with significantly reduced $N$.
+
+\subsection{Scherrer Equation}
+
+The Scherrer equation quantifies the relationship between diffraction peak width and crystallite size~\cite{scherrer_original,holzwarth2011scherrer}:
+\begin{equation}
+\tau = \frac{K \lambda}{\beta \cos \theta}
+\label{eq:scherrer}
+\end{equation}
+where $\tau$ is the mean crystallite size, $K \approx 0.9$ is a shape factor, $\beta$ is the full-width at half-maximum (FWHM) of the peak (in radians), and $\theta$ is the Bragg angle. This equation directly connects the breadth of the sinc-like peak profile to the finite extent of ordered domains. For crystalline solids with large $\tau$ ($\gtrsim 100$ nm), peaks are sharp; for liquids or nanocrystals with small $\tau$ ($\lesssim 10$ nm), peaks broaden significantly, appearing sinc-like rather than delta-like.
+
+\section{Experimental Methods}
+
+Powder X-ray diffraction measurements were performed using the Debye-Scherrer geometry, in which a monochromatic X-ray beam illuminates a powdered sample, and the diffracted intensity is recorded as a function of the scattering angle $2\theta$. This geometry is ideal for polycrystalline or disordered samples, as it averages over all crystallite orientations.
+
+All the experiment was run using the following run configuration: 35[V], 1[mA], run time 2.5-3 hours and distance of 1[cm], 1.5[cm] or 2[cm] depending on the measurement. different distances where testing to see effect, data algorithm address the different distances.
+
+\subsection{Sample Preparation}
+
+Samples were prepared from reagent-grade NaCl (Sigma-Aldrich), urea (Sigma-Aldrich), and choline chloride (Sigma-Aldrich). Mixtures of urea and choline chloride were prepared at molar ratios of 1:1, 1:2, 2:1, and 3:1. Due to the hygroscopic nature of choline chloride, which readily absorbs moisture from air and partially liquefies~\cite{choline_hygroscopic}, sample handling was performed in a dry nitrogen atmosphere where possible. However, brief air exposure during loading was unavoidable, and its effects are discussed in Sec.~\ref{sec:results}.
+
+Powdered samples were loaded into glass capillaries (diameter $\sim 0.5$ mm) and sealed. NaCl served as a crystalline reference standard.
+
+\subsection{Diffraction Measurements}
+
+XRD patterns were collected using a laboratory X-ray diffractometer equipped with a Cu K source $\alpha$ ($\lambda = 1.54$ Å) and a 2D area detector. The exposure times ranged from 2.5 to 3 hours depending on the available time. The resulting 2D diffraction rings (Debye-Scherrer rings) were azimuthally integrated to produce intensity profiles vs. $2\theta$.
+
+Peak positions, widths (FWHM) and integrated intensities were extracted by fitting Gaussian or pseudo-Voigt functions to the diffraction peaks. The Scherrer equation (Eq.~\ref{eq:scherrer}) was applied to estimate effective crystallite sizes from peak widths.
+
+\section{Results and Discussion}
+\label{sec:results}
+
+\subsection{NaCl Reference: Crystalline Solid Behavior}
+Figure ~\ref{fig:nacl_diffraction} shows the diffraction pattern of NaCl powder. Sharp, well-defined peaks are observed at $2\theta$ values corresponding to the known fcc crystal structure of NaCl. The peaks exhibit FWHM values $\beta \sim 0.2^\circ$, consistent with crystallite sizes on the order of $\tau \sim 50$--100 nm (calculated via Eq.~\ref{eq:scherrer}). These sharp peaks approximate delta functions, as expected for a highly crystalline material with large coherently scattering domains.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{results/nacl_film.png}
+    \caption{NaCl diffraction patten, using Debye-Scherrer method, displayed on the film}
+\end{figure}
+
+\subsection{Urea-Choline Chloride Mixtures: Transition to Liquid Phase}
+
+Diffraction patterns for urea-choline chloride mixtures at various compositions are shown in Fig.~\ref{fig:urea_chcl_diffraction}. For off-eutectic molar ratios (1:1, 1:2), the samples remained solid at room temperature, and diffraction patterns exhibited relatively sharp peaks, though somewhat broader than NaCl due to smaller crystallite sizes and/or strain.
+
+At the eutectic molar ratio of 2:1, the sample liquefied at room temperature. The corresponding diffraction pattern showed dramatically broadened peaks with FWHM values $\beta \sim 2^\circ$--$5^\circ$, more than an order of magnitude larger than the crystalline references. Applying the Scherrer equation yields effective ``crystallite sizes'' of $\tau \sim 2$--5 nm, comparable to the molecular scale. This is consistent with the liquid state, where coherent scattering domains are limited to nearest-neighbor distances.
+
+The broadened peaks retain an approximately sinc-like profile, as predicted by the Fourier transform of a finite scattering domain. In the liquid, the limit $N \to \infty$ is \textit{not} reached—only a few coordination shells contribute coherently—resulting in a sinc function that does not approach a delta function.
+
+\begin{figure}[h!]
+    \centering
+    % --- First Subfigure ---
+    \begin{subfigure}[b]{0.48\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{results/1_10.png}
+        \caption{1[g] ChCl : 10[g] Urea}
+        \label{fig:1_10_ratio}
+    \end{subfigure}
+    \hfill % Adds flexible space between the images
+    \begin{subfigure}[b]{0.48\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{results/7_20.png}
+        \caption{7[g] ChCL: 10[g]Urea}
+        \label{fig:7_20_ratio}
+    \end{subfigure}
+    
+    \caption{Main caption describing both images.}
+    \label{fig:nacl_diffraction}
+\end{figure}
+
+\subsection{Role of Hygroscopic}
+
+Choline chloride is highly hygroscopic and absorbs atmospheric moisture rapidly~\cite{choline_hygroscopic}. Even brief exposure to air during sample preparation caused partial liquefaction of samples containing choline chloride, particularly at compositions near the eutectic. Water absorption further reduces the melting point, and the presence of absorbed water increases disorder, contributing to additional peak broadening.
+
+This effect was most pronounced in samples with a high choline chloride content. The diffraction patterns of these samples showed evidence of coexisting crystalline and liquid phases, with both sharp and broad peaks superimposed. Controlling moisture exposure is therefore critical to obtain reproducible results.
+
+\subsection{Connection to Scherrer Equation and Fourier Formalism}
+
+Our observations are fully consistent with the Scherrer equation and the Fourier transform interpretation of diffraction. The sharp peaks of the crystalline NaCl and eutectic mixtures correspond to large $N$ (many unit cells), where $\text{sinc}(Nkd/2) \approx \delta(k)$. The broad peaks from the eutectic liquid correspond to small $N$ (few coordination shells), where the sinc function remains broad.
+This framework unifies the description of crystalline and liquid diffraction: both are manifestations of the same underlying interference phenomenon, differing only in the extent of coherent scattering. The Scherrer equation provides a quantitative measure of this extent.
+
+\section{Future Improvements}
+
+Several experimental improvements could enhance the precision and reproducibility of these measurements:
+
+\begin{enumerate}
+\item \textbf{Moisture control:} Performing all sample preparation and measurements in a controlled dry atmosphere (e.g., glove box) or using sealed capillaries with desiccants would minimize hygroscopic effects.
+
+\item \textbf{Temperature control:} Implementing a temperature stage would allow systematic study of the melting transition as a function of temperature, mapping the phase diagram more completely.
+
+\item \textbf{Peak fitting and analysis:} Employing more sophisticated peak deconvolution methods (e.g., Rietveld refinement, Williamson-Hall analysis) would separate contributions from crystallite size, microstrain, and instrumental broadening more accurately.
+
+\item \textbf{Synchrotron radiation:} Using synchrotron X-ray sources with higher brightness and energy resolution would improve signal-to-noise ratios and enable detection of weaker structural features, particularly in the liquid phase.
+
+\ \textbf{item Additives for stabilization:} Introducing desiccants or other stabilizing agents to the eutectic mixture could prevent unwanted liquefaction and allow a controlled study of solid phases near the eutectic composition.
+
+\item \textbf{Improved measurement method:} Film  is quite brute and inaccurate way to detect X-Ray intensity. to extract intensity from the film, you need to develop, and scan the film which causes a large error range for each point and limits the data accuracy by the accuracy of the film which is very dependent on quality.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.75\linewidth]{film_nonlinear_behaviour.png}
+    \caption{Film color change relative to exposure}
+\end{figure}
+
+Moreover, film color intensity is nonlinear which caused our intensity data to be not linear.
+thus we recommend using a different more linear way of measurement (such as X-Ray camera) or to address film Nonlinearity.
+
+
+\end{enumerate}
+
+\section{Conclusions}
+
+We have demonstrated the use of Debye-Scherrer X-ray powder diffraction to investigate solid-liquid phase transitions in deep eutectic mixtures of urea and choline chloride. At the eutectic composition (2:1 molar ratio), the sample liquefies at room temperature, exhibiting broad, sinc-like diffraction peaks characteristic of short-range order. Off-eutectic compositions and reference NaCl produce sharp, delta-like peaks typical of crystalline solids.
+
+These observations are quantitatively explained by the Scherrer equation and the Fourier transform formalism: diffraction peaks are the Fourier transform of the lattice, with the infinite crystal representing the limit where the sinc function narrows to a delta function. In liquids, this limit is not reached due to the finite extent of coherent scattering domains.
+
+The hygroscopic nature of choline chloride significantly affects experimental results, causing unintended liquefaction and peak broadening. Future work incorporating improved moisture control, temperature staging, and advanced analysis techniques will enable more detailed characterization of phase transitions in eutectic systems.
+
+\appendix
+
+\section{Appendix}
+
+Repository of code: \url{https://github.com/shoham-b/XRay.git}
+
+
+\section{bibliography}
+\bibliography{bib}
+
+\end{document}
