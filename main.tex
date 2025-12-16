@@ -97,19 +97,32 @@ Figure ~\ref{fig:nacl_diffraction} shows the diffraction pattern of NaCl powder.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{results/nacl_film.png}
-    \caption{NaCl diffraction patten, using Debye-Scherrer method, displayed on the film}
+    \caption{NaCl diffraction pattern, using Debye-Scherrer method, displayed on the film}
     \label{fig:nacl_diffraction}
 \end{figure}
 
 The NaCl diffraction pattern is used as a sanity test for  ring extracting algorithm. as shown by Figure ~\ref{fig:nacl_rings} it is clear that algorithm is quite accurate and finds all eye clear rings and more which the eye can't clearly identify without a closer look, those rings are infered based on peaks from Figure ~\ref{fig:nacl_data}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{results/SALT_rings.png}
+    \caption{NaCl diffraction pattern in grey scale, red rings are infered by the algorithm}
+    \label{fig:nacl_rings}
+\end{figure}
 
-Algorithm data for the Nacl sample ~\ref{fig:nacl_data}, graph presents the raw data (), the background fit(), their subtractions (red) which represent the "real" X-Ray diffraction pattern, subtraction with magnification (yellow) and the peaks located on the subtraction which are the inferred rings which our eye many times can't identify.
+Algorithm data for the Nacl sample ~\ref{fig:nacl_data}, graph presents the raw data (black), the background fit(green), their subtractions (red) which represent the "real" X-Ray diffraction pattern, subtraction with magnification (yellow) and the peaks located on the subtraction which are the inferred rings which our eye many times can't identify.
 when compared with Figure ~\ref{fig:nacl_rings} we see many rings matching which gives the algorithm much credibility.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{results/SALT_intensity_vs_2theta.png}
+    \caption{NaCl algorithm data, Intensity by angle of impact.}
+    \label{fig:nacl_data}
+\end{figure}
+
 \subsection{Urea-Choline Chloride Mixtures: Transition to Liquid Phase}
-Diffraction patterns for urea-choline chloride mixtures at various compositions are shown in Fig.~\ref{fig:urea_chcl_diffraction}. For off-eutectic molar ratios (1:1, 1:2), the samples remained solid at room temperature, and diffraction pattern exhibited relatively sharp peaks, though somewhat broader than NaCl due to smaller crystallite sizes and/or strain.
-The solid mixtures arent very unified, for that reson we see terrirble unclear diffraction patterns as shown in Figure. ~\ref{fig:solid_urea_nacl}
+Diffraction patterns for urea-choline chloride mixtures at various compositions are shown in Fig.~\ref{fig:urea_chcl_diffraction}. For off-eutectic molar ratios (1:1, 1:2), the samples remained solid at room temperature, and diffraction pattern exhibited relatively sharp peaks, though somewhat broader than Chcl due to smaller crystallite sizes and/or strain.
+The solid mixtures arent very unified, for that reson we see terrirble unclear diffraction patterns as shown in Figure. ~\ref{fig:solid_urea_Chcl}
 
 \begin{figure}[H]
     \centering
@@ -129,11 +142,11 @@ The solid mixtures arent very unified, for that reson we see terrirble unclear d
     \end{subfigure}
     
     \caption{Urea Choline-Chloride Solid Mixtures Diffraction on Film Zoomed in}
-    \label{fig:solid_urea_nacl}
+    \label{fig:solid_urea_Chcl}
 \end{figure}
 
 
-At the eutectic molar ratio of 2:1, the sample liquefied at room temperature and became eutectic. the liquid sample was much more unified, which causes the diffraction patterns to be much clearer diffraction pattern with much clearer Debye rings compared the Nacl-urea solid mixtures as clearly showed in Figure ~\ref{fig:eutectic_film}.
+At the eutectic molar ratio of 2:1, the sample liquefied at room temperature and became eutectic. the liquid sample was much more unified, which causes the diffraction patterns to be much clearer diffraction pattern with much clearer Debye rings compared the Chcl-Urea solid mixtures as clearly showed in Figure ~\ref{fig:eutectic_film}. notice that the measurement is not symmetrical in y axis, (probably due to film development issue) so the algorithm ran only the on upper half of the image and assumed radius symmetry.
 
 
 \begin{figure}[H]
@@ -147,6 +160,58 @@ At the eutectic molar ratio of 2:1, the sample liquefied at room temperature and
 The eutectic measurement diffraction pattern showed dramatically broadened peaks with FWHM values $\beta \sim 2^\circ$--$5^\circ$, more than an order of magnitude larger than the crystalline references. Applying the Scherrer equation yields effective ``crystallite sizes'' of $\tau \sim 2$--5 nm, comparable to the molecular scale. This is consistent with the liquid state, where coherent scattering domains are limited to nearest-neighbor distances.
 
 The broadened peaks retain an approximately sinc-like profile, as predicted by the Fourier transform of a finite scattering domain. In the liquid, the limit $N \to \infty$ is \textit{not} reached—only a few coordination shells contribute coherently—resulting in a sinc function that does not approach a delta function.
+
+\subsection{Peaks Comparison}
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{results/peaks_distribution.png}
+    \caption{All inferred rings per measurement, each cross is a ring, cross width represent rings width, cross height represent ring relative intensity.}
+    \label{fig:all_peaks}
+\end{figure}
+
+
+Many rings are common to many measurements allowing to infer from which material the ring sources from, as example ring \math{2\theta \approx 45 } exist in all measurements so probably arrises from ChCl, and ring \math(2\theta \approx 4) exists in all but Ch Cl so probably sourced in Urea diffraction pattern.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{results/peaks_common.png}
+    \caption{Common inferred ring, rings which exists in 3 or more measurements, cross width represent rings width, cross height represent ring relative intensity.}
+    \label{fig:common_peaks}
+\end{figure}
+
+
+
+\subsection{Aggregate Rings}
+
+when observing individual rings, it is hard to state results and effects which are general for all measurements and are caused by the difference between samples.
+so lets aggregate the rings and observe.
+
+\newline
+
+Figure ~\ref{fig:avg_peak_width} shows the eutectic rings (peaks) are the most width, according to the theory the rings should have more span, Figure ~\ref{fig:avg_peak_width} gives credibility to the claim that eutectic diffraction pattern would have wider rings.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{results/avg_peak_width.png}
+    \caption{Average width of all inferred rings from per measurement.}
+    \label{fig:avg_peak_width}
+\end{figure}
+
+Figure ~\ref{fig:avg_peak_intencity} clearly shows that eutectic rings are much less bright cause they have much lower intensity. we also see the that mixtures have much lower intensity that the pure ChCl. it is possible that mixtures have lower intensity that pure materiel, to affirm it more measurements are needed.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{results/avg_peak_intensity.png}
+    \caption{Average intensity of all inferred rings from per measurement.}
+    \label{fig:avg_peak_intencity}
+\end{figure}
+
+The aggregate results raise a strong confirmation to the theory that eutectic rings should be broadened and softened. however, the results in our opinion are not quality enough to give a numerical assessment to the strength of the liquefaction on the peaks width and height.
+
 
 \subsection{Role of Hygroscopic}
 
